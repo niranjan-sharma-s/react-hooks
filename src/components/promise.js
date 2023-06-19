@@ -17,7 +17,7 @@ const DemoPromise = () => {
     }
   });
 
- const result =  myPromise
+  const result = myPromise
     .then((message) => {
       console.log(message);
     })
@@ -25,9 +25,25 @@ const DemoPromise = () => {
       console.log(message);
     });
 
-  return <div>
-  {result}
-  </div>;
+  return <div>{result}</div>;
 };
+
+//Promise.all
+
+const promise1 = Promise.resolve(1);
+
+const promise2 = Promise.resolve(2);
+
+const promise3 = Promise.resolve(3);
+
+Promise.all([promise1, promise2, promise3])
+
+  .then((values) => {
+    console.log(values); // Output: [1, 2, 3]
+  })
+
+  .catch((error) => {
+    console.error(error);
+  });
 
 export default DemoPromise;
